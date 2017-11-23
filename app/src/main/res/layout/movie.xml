@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.architecture.movies.data.local.entity.MovieEntity" />
+
+        <variable
+            name="resource"
+            type="com.architecture.movies.data.Resource" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{movie.title}"
+            app:layout_constraintStart_toEndOf="@id/title_textView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/vote_average_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vote Average: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_textView" />
+
+        <TextView
+            android:id="@+id/vote_average_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{Double.toString(movie.voteAverage)}"
+            app:layout_constraintStart_toEndOf="@id/vote_average_textView"
+            app:layout_constraintTop_toBottomOf="@id/title_value" />
+
+        <TextView
+            android:id="@+id/popularity_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popularity: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vote_average_textView" />
+
+        <TextView
+            android:id="@+id/popularity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{Double.toString(movie.popularity)}"
+            app:layout_constraintStart_toEndOf="@id/popularity_textView"
+            app:layout_constraintTop_toBottomOf="@id/vote_average_value" />
+
+        <TextView
+            android:id="@+id/overview_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overview: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/popularity_textView" />
+
+        <TextView
+            android:id="@+id/overview_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:text="@{movie.overview}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overview_textView" />
+
+        <TextView
+            android:id="@+id/release_date_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Release date: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overview_value" />
+
+        <TextView
+            android:id="@+id/release_date_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{movie.releaseDate}"
+            app:layout_constraintStart_toEndOf="@id/release_date_textView"
+            app:layout_constraintTop_toBottomOf="@id/overview_value" />
+
+        <!--
+        private int id;
+    private float vote_average;
+    private String title;
+    private float popularity;
+    private String poster_path;
+    private String backdrop_path;
+    private boolean adult;
+    private String overview;
+    private String release_date;
+    @Ignore
+    private List<Integer> genre_ids;
+        -->
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
